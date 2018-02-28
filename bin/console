@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+namespace App;
+
+$root = dirname(__DIR__);
+
+require "{$root}/vendor/autoload.php";
+
+// Gets options
+require "options.php";
+
+(new ServerTCPSocket())
+    ->bind($address, $port)
+    ->listen();
